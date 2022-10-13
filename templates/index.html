@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% macro user_details(user, is_admin=false) %}
+Hello <strong>{{user}}</strong> from macro!!@@@
+
+{%if is_admin %}I'm an administrator {%else%} I'm a normal user {% endif %}
+{% endmacro %}
+<div class="container">
+  <h1>My test application</h1>
+  <p>Hello {{ name }}!!</p>
+
+  <p>{{ user_details("John", true) }}</p>
+
+  <p>{{ user_details("Jack", false) }}</p>
+
+</div>
+
+
+</body>
+</html> 
